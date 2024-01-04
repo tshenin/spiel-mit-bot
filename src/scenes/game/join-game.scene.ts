@@ -6,6 +6,7 @@ export const joinGameSceneRun = () => {
 
   joinGameScene.enter(async (ctx) => {
     const id = ctx.scene.state['game'];
+
     if (!ctx.from.last_name) {
       // todo запросить имя
       await ctx.reply('У вас не указана фамилия');

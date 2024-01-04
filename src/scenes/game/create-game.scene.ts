@@ -1,4 +1,5 @@
 import {Scenes, Telegraf} from "telegraf";
+import {getYear, setHours} from "date-fns";
 import {
   renderCapacityButtons,
   renderDateButtons,
@@ -72,8 +73,8 @@ export const createGameSceneRun = () => {
 
     try {
       const [dayOfMonth, month] = day.split('.');
-      const year = new Date().getFullYear();
-      const date = new Date(new Date(year, month, dayOfMonth).setHours(time));
+      const year = getYear(new Date());
+      const date = setHours(new Date(year, month - 1, dayOfMonth), time);
 
       await addGame({ date, coach, capacity, type, level, participants: [] });
 

@@ -5,7 +5,6 @@ import {add, format} from "date-fns";
 export const renderAdminGameButtons = (game: GameDocument) => ([Markup.button.callback('Удалить', `remove_game__${game.id}`)]);
 
 export const renderJoinGameButtons = (game: GameDocument) => {
-
   return {
     ...Markup.inlineKeyboard([
       Markup.button.callback('Записаться', `join__${game.id}`),
@@ -48,7 +47,7 @@ export const renderDateButtons = (startDate: Date = new Date(), days: number = 7
 }
 
 export const renderTimeButtons = () => {
-  const timeList = ['10','11','12','18','19','20','21','22'];
+  const timeList = ['10','11','12','17','18','19','20','21','22'];
 
   return {
     ...Markup.inlineKeyboard([
